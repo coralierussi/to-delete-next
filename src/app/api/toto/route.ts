@@ -18,5 +18,5 @@ export const POST = async (req: NextRequest) => {
             name: body.data.name,
         }
     })
-    return NextResponse.json ({message: `Hello, ${name}` });
+    return NextResponse.json ({message: `Hello, ${name}` , newUser});
 };

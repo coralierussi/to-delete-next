@@ -11,11 +11,12 @@ export const GET = async () => {
 export const POST = async (req: NextRequest) => {
     //const {content} = await req.json ();
     const body = await req.json();
-    const content = body.data.content;
+    const {content, qcmId} = body.data.content;
     const newQuestion = await prisma.question.create({
         data: {
-            content: body.data.content,
+            content,
+            qcmId
         }
     })
-    return NextResponse.json ({${content} });
+    return NextResponse.json ({ newQuestion });
 };
